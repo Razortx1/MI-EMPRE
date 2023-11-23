@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprendimientos</title>
+</head>
+<body>
+    <h1>Emprendimientos</h1>
+    {% if emprendimientos %}
+    <a href="agregarEmprendimiento">Agregar Emprendimiento</a>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Estado</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for emprendimiento in emprendimientos %}
+            <tr>
+                <td>{{emprendimiento.imagenEmprendimiento}}</td>
+                <td>{{emprendimiento.nombreProyecto}}</td>
+                <td>{{emprendimiento.detalleEmprendimiento}}</td>
+                <td>{{emprendimiento.estadoEmprendimiento}}</td>
+                <td><button>Actualizar</button></td>
+                <td><button>Eliminar</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+    {% endif %}
+</body>
+</html>
