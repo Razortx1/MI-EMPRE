@@ -10,12 +10,4 @@ def probando(request):
 
 
 def agregarEmprendimiento(request):
-    form = forms.formEmprendimiento()
-
-
-    if request.method == 'POST':
-        form = forms.formEmprendimiento(request.POST)
-        if form.is_valid():
-            emprendimiento = form.save(commit=False)
-    data = {'form': form}
-    return render(request, 'emprendedor/agregarEmpren.html', data)
+    return render(request, 'emprendedor/agregarEmpren.html')
