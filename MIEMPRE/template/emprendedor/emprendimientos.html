@@ -7,8 +7,9 @@
 </head>
 <body>
     <h1>Emprendimientos</h1>
-    {% if emprendimientos %}
     <a href="agregarEmprendimiento">Agregar Emprendimiento</a>
+    {% if emprendimientos %}
+    
     <table>
         <thead>
             <tr>
@@ -23,12 +24,12 @@
         <tbody>
             {% for emprendimiento in emprendimientos %}
             <tr>
-                <td>{{emprendimiento.imagenEmprendimiento}}</td>
+                <td><img src="../../images/{{emprendimiento.imagenEmprendimiento}}" width="200px" height="auto"></td>
                 <td>{{emprendimiento.nombreProyecto}}</td>
                 <td>{{emprendimiento.detalleEmprendimiento}}</td>
                 <td>{{emprendimiento.estadoEmprendimiento}}</td>
-                <td><button>Actualizar</button></td>
-                <td><button>Eliminar</button></td>
+                <td><button><a href="actualizarEmprendimiento/{{emprendimiento.id}}">Actualizar</a></button></td>
+                <td><button><a href="eliminarEmprendimiento/{{emprendimiento.id}}">Eliminar</a></button></td>
             </tr>
             {% endfor %}
         </tbody>

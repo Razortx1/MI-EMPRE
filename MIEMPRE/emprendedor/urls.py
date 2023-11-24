@@ -1,9 +1,10 @@
 from django.urls import path
-from .views import probando
-from .views import agregarEmprendimiento
+from .views import *
 
 
 urlpatterns = [
-    path('', probando),
-    path('agregarEmprendimiento', agregarEmprendimiento)
+    path('', probando, name='lista_emprendimiento'),
+    path('agregarEmprendimiento', agregarEmprendimiento),
+    path('actualizarEmprendimiento/<int:id>/', actualizarEmprendimiento),
+    path('eliminarEmprendimiento/<int:id>/', eliminarEmprendimiento)
 ]

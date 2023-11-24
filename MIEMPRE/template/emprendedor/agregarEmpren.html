@@ -9,7 +9,7 @@
 
     <h1>Agregar o actualizar Emprendimientos</h1>
 
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {{ form.as_p }}
         {% csrf_token %}
         <input type="submit" value="Agregar Emprendimiento">
